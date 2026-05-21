@@ -1,0 +1,110 @@
+[
+  {
+    "id": "pto-001",
+    "question": "How many PTO days do I get if I'm a US employee (not in California) with 4 years of tenure?",
+    "expected_answer": "22 days per year, accruing at approximately 1.83 days per month.",
+    "context": {"region": "US (non-CA)", "tenure_years": 4, "role": "Individual Contributor"},
+    "difficulty": "easy",
+    "tags": ["pto", "us", "accrual"],
+    "notes": "Straightforward lookup — single table row."
+  },
+  {
+    "id": "pto-002",
+    "question": "I'm based in California and I haven't used any PTO in two years. Will I lose it at year end?",
+    "expected_answer": "No. California employees are not subject to year-end PTO forfeiture. Unused PTO rolls over indefinitely, though accrual pauses when your balance reaches the 45-day soft cap.",
+    "context": {"region": "California", "tenure_years": 2, "role": "Individual Contributor"},
+    "difficulty": "medium",
+    "tags": ["pto", "california", "rollover", "forfeiture"],
+    "notes": "Tests whether agent correctly distinguishes California from general US policy."
+  },
+  {
+    "id": "pto-003",
+    "question": "I'm a Netherlands employee with 4 years of tenure. How many PTO days do I have, and when do they expire?",
+    "expected_answer": "You have 30 days total (the standard 25 days plus 5 additional days granted at 3 years of tenure). The 20 statutory days expire on July 1 of the following year. The 10 supplemental days expire December 31 of the following year.",
+    "context": {"region": "Netherlands", "tenure_years": 4, "role": "Individual Contributor"},
+    "difficulty": "hard",
+    "tags": ["pto", "netherlands", "expiry", "tenure"],
+    "notes": "Requires combining two facts: the 3-year tenure bump AND the split expiry windows. Common failure: agent gives 25 days instead of 30, missing the tenure bump."
+  },
+  {
+    "id": "pto-004",
+    "question": "Can I take 20 consecutive days of PTO?",
+    "expected_answer": "No, not by default. Employees may not take more than 15 consecutive calendar days of PTO without SVP-level approval. 20 consecutive days would require SVP approval.",
+    "context": {"region": "US", "tenure_years": 2, "role": "Individual Contributor"},
+    "difficulty": "medium",
+    "tags": ["pto", "approval", "consecutive"],
+    "notes": "Tests retrieval of the consecutive-day cap rule."
+  },
+  {
+    "id": "it-001",
+    "question": "Do I need a VPN to use Slack from a coffee shop?",
+    "expected_answer": "No. Slack is a SaaS tool gated by Okta-enforced device trust, so it does not require VPN. VPN is only required when accessing Internal or above resources on non-corporate networks.",
+    "context": {"region": "US", "tenure_years": 1, "role": "Individual Contributor"},
+    "difficulty": "medium",
+    "tags": ["it", "vpn", "remote-access"],
+    "notes": "Requires agent to identify Slack as an SSO-gated SaaS tool and apply the VPN exception correctly."
+  },
+  {
+    "id": "it-002",
+    "question": "I'm an engineer. Do I need a YubiKey?",
+    "expected_answer": "Yes, if you work on production infrastructure. Engineers and DevOps roles working on production systems are issued a hardware security key (YubiKey) and must use it for all production environment access. SSH access to production requires the hardware key; password-only SSH is disabled in production.",
+    "context": {"region": "US", "tenure_years": 2, "role": "Engineer"},
+    "difficulty": "medium",
+    "tags": ["it", "security", "yubikey", "engineering"],
+    "notes": "Tests role-based variation. Agent should note the 'production infrastructure' qualifier."
+  },
+  {
+    "id": "it-003",
+    "question": "Can I use ChatGPT for work tasks?",
+    "expected_answer": "Only with caution. You may use AI tools that are on Acme's approved AI Tools Registry. ChatGPT in its free or personal tier is not approved for Confidential or Restricted data — inputting such data into unapproved tools is a policy violation. Check the AI Tools Registry for currently approved options.",
+    "context": {"region": "US", "tenure_years": 3, "role": "Individual Contributor"},
+    "difficulty": "medium",
+    "tags": ["it", "ai-tools", "genai", "data-classification"],
+    "notes": "Tests the AI tools section. Subtle: the policy doesn't ban ChatGPT outright but restricts data classification."
+  },
+  {
+    "id": "leave-001",
+    "question": "I'm a US primary caregiver expecting a baby. How much paid leave do I get?",
+    "expected_answer": "16 weeks at 100% of your base salary. This runs concurrently with FMLA (12 weeks). You may also append accrued PTO at the end, though this is optional.",
+    "context": {"region": "US", "tenure_years": 2, "role": "Individual Contributor"},
+    "difficulty": "easy",
+    "tags": ["parental-leave", "us", "primary-caregiver"],
+    "notes": "Straightforward lookup."
+  },
+  {
+    "id": "leave-002",
+    "question": "I'm based in Germany and my partner just had a baby. I want to take Elternzeit. Does Acme supplement my pay, and for how long?",
+    "expected_answer": "Yes, Acme supplements your pay for the first 14 weeks only. During that period, Acme tops up the government Elterngeld benefit to 100% of your base salary. After 14 weeks, no supplement is provided — you would receive Elterngeld only (65% of net income, capped at €1,800/month).",
+    "context": {"region": "Germany", "tenure_years": 3, "role": "Individual Contributor"},
+    "difficulty": "hard",
+    "tags": ["parental-leave", "germany", "elternzeit", "supplement"],
+    "notes": "Requires combining Elterngeld details with Acme's supplement limit. Common failure: agent says Acme supplements full Elternzeit or doesn't mention the 14-week cap."
+  },
+  {
+    "id": "leave-003",
+    "question": "Does equity vesting pause during parental leave?",
+    "expected_answer": "No. Equity vesting continues uninterrupted during parental leave regardless of whether the leave is paid or unpaid.",
+    "context": {"region": "US", "tenure_years": 2, "role": "Individual Contributor"},
+    "difficulty": "easy",
+    "tags": ["parental-leave", "equity", "benefits"],
+    "notes": "Simple factual retrieval from the Benefits section."
+  },
+  {
+    "id": "cross-001",
+    "question": "I'm going on parental leave in the US. Will I still accrue PTO during my leave?",
+    "expected_answer": "Yes. PTO continues to accrue during paid parental leave. If any portion of your leave is unpaid, PTO accrual pauses during that unpaid portion.",
+    "context": {"region": "US", "tenure_years": 2, "role": "Individual Contributor"},
+    "difficulty": "hard",
+    "tags": ["parental-leave", "pto", "cross-policy", "accrual"],
+    "notes": "Cross-policy question requiring synthesis of HR-PTO-001 and HR-LEAVE-002. Tests whether agent can reason across documents."
+  },
+  {
+    "id": "cross-002",
+    "question": "I'm a UK engineer and I got a written warning for emailing confidential data to my personal email. My manager is now suggesting a PIP. Can they do that?",
+    "expected_answer": "The IT Security policy does not directly restrict when a PIP can be initiated for UK employees. However, the Parental Leave policy notes that employees on parental leave cannot be placed on a PIP initiated during their leave. If you are not currently on parental leave, the policy does not prohibit a PIP — though the Level 2 violation consequence outlined in the IT policy is a written warning and additional training, not necessarily a PIP. You may want to speak with your HR Business Partner about the specific circumstances.",
+    "context": {"region": "UK", "tenure_years": 1, "role": "Engineer"},
+    "difficulty": "hard",
+    "tags": ["it", "hr", "cross-policy", "pip", "discipline"],
+    "notes": "Deliberately ambiguous. Tests whether agent hedges appropriately rather than hallucinating a policy that doesn't exist. Good agent notes the gap and recommends HR."
+  }
+]
