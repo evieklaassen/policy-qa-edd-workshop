@@ -1,6 +1,6 @@
-# Eval-Driven Development Workshop for Enterprise AI Agents
+# Eval-Driven Development Workshop for Enterprise AI Applications
 
-A technical workshop demonstrating eval-driven development (EDD) for enterprise AI agents, using LangSmith and LangChain. The use case is an HR & IT policy Q&A agent.
+A technical workshop demonstrating eval-driven development (EDD) for enterprise AI applications, using LangSmith and LangChain. The use case is an HR & IT policy Q&A chatbot.
 
 ## Quick Start
 
@@ -36,7 +36,7 @@ Get a LangSmith API key at [smith.langchain.com](https://smith.langchain.com).
 
 ```
 workshop/
-├── policy_qa_agent.ipynb      # Main workshop notebook
+├── policy_qa_chatbot.ipynb    # Main workshop notebook
 ├── BRIEF.md                   # Pre-workshop brief for team leads
 ├── requirements.txt           # Dependencies
 ├── policies/                  # HR & IT policy documents
