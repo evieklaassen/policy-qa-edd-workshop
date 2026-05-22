@@ -1,13 +1,13 @@
-# Workshop Brief: Eval-Driven Development for Enterprise AI Agents
+# Workshop Brief: Eval-Driven Development for Enterprise AI Applications
 **Prepared by: Evie Klaassen, May 2026**
 
 ---
 
 ## Topic & Rationale
 
-This workshop focuses on **eval-driven development (EDD)**, the practice of building and iterating on AI agents against a disciplined, version-controlled evaluation dataset. In particular, we will explore the principles of EDD through the lens of a **policy Q&A agent** that answers employee questions about HR and IT policies.
+This workshop focuses on **eval-driven development (EDD)**, the practice of building and iterating on AI agents against a disciplined, version-controlled evaluation dataset. In particular, we will explore the principles of EDD through the lens of a **policy Q&A chatbot** that answers employee questions about HR and IT policies.
 
-Many enterprise teams building agents hit the same wall: the agent demos well, gets deployed to a pilot, and then fails on nuanced real-world queries in ways nobody anticipated. It's possible that fixing one issue could result in another. It becomes difficult to know if prompt changes, retriever changes, or model changes are improvements or regressions, and it's challenging to know whether quality is improving over time.
+Many enterprise teams building LLM-based applications hit the same wall: the app demos well, gets deployed to a pilot, and then fails on nuanced real-world queries in ways nobody anticipated. It's possible that fixing one issue could result in another. It becomes difficult to know if prompt changes, retriever changes, or model changes are improvements or regressions, and it's challenging to know whether quality is improving over time.
 
 The root cause is almost always the same: instead of a team iterating without a systematic evaluation framework, they're optimizing by reading outputs.
 
@@ -19,7 +19,7 @@ HR and IT policy documents represent a near-universal enterprise use case where 
 
 ## Target Audience & Prerequisites
 
-**Target audience:** Engineering teams building or evaluating RAG-based agents for internal knowledge Q&A, support, or decision-support use cases.
+**Target audience:** Engineering teams building or evaluating RAG-based applications for internal knowledge Q&A, support, or decision-support use cases.
 
 **Prerequisites:**
 - Comfortable with developing in Python
@@ -43,7 +43,7 @@ By the end of this session, participants will be able to:
 1. **Articulate why eval-driven development matters** and describe the specific failure modes it catches that manual review misses
 2. **Design a golden eval dataset** that covers representative queries, context-dependent cases, and edge cases
 3. **Choose and implement appropriate evaluators** (correctness, groundedness, completeness) using LLM-as-a-judge, and explain the failure mode each evaluator targets
-4. **Run structured evaluation experiments in LangSmith** and compare results across agent versions to make data-driven iteration decisions
+4. **Run structured evaluation experiments in LangSmith** and compare results across versions to make data-driven iteration decisions
 5. **Route cases to human review** using LangSmith annotation queues and describe the criteria for human vs. automated evaluation
 6. **Articulate clear criteria** for when a change warrants a new eval run vs. when it doesn't
 7. **Maintain a healthy eval dataset** by adding cases from real failures

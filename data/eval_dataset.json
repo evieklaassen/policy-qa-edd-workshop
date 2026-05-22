@@ -15,7 +15,7 @@
     "context": {"region": "California", "tenure_years": 2, "role": "Individual Contributor"},
     "difficulty": "medium",
     "tags": ["pto", "california", "rollover", "forfeiture"],
-    "notes": "Tests whether agent correctly distinguishes California from general US policy."
+    "notes": "Tests whether chatbot correctly distinguishes California from general US policy."
   },
   {
     "id": "pto-003",
@@ -24,7 +24,7 @@
     "context": {"region": "Netherlands", "tenure_years": 4, "role": "Individual Contributor"},
     "difficulty": "hard",
     "tags": ["pto", "netherlands", "expiry", "tenure"],
-    "notes": "Requires combining two facts: the 3-year tenure bump AND the split expiry windows. Common failure: agent gives 25 days instead of 30, missing the tenure bump."
+    "notes": "Requires combining two facts: the 3-year tenure bump AND the split expiry windows. Common failure: chatbot gives 25 days instead of 30, missing the tenure bump."
   },
   {
     "id": "pto-004",
@@ -42,7 +42,7 @@
     "context": {"region": "US", "tenure_years": 1, "role": "Individual Contributor"},
     "difficulty": "medium",
     "tags": ["it", "vpn", "remote-access"],
-    "notes": "Requires agent to identify Slack as an SSO-gated SaaS tool and apply the VPN exception correctly."
+    "notes": "Requires chatbot to identify Slack as an SSO-gated SaaS tool and apply the VPN exception correctly."
   },
   {
     "id": "it-002",
@@ -51,7 +51,7 @@
     "context": {"region": "US", "tenure_years": 2, "role": "Engineer"},
     "difficulty": "medium",
     "tags": ["it", "security", "yubikey", "engineering"],
-    "notes": "Tests role-based variation. Agent should note the 'production infrastructure' qualifier."
+    "notes": "Tests role-based variation. Chatbot should note the 'production infrastructure' qualifier."
   },
   {
     "id": "it-003",
@@ -78,7 +78,7 @@
     "context": {"region": "Germany", "tenure_years": 3, "role": "Individual Contributor"},
     "difficulty": "hard",
     "tags": ["parental-leave", "germany", "elternzeit", "supplement"],
-    "notes": "Requires combining Elterngeld details with Acme's supplement limit. Common failure: agent says Acme supplements full Elternzeit or doesn't mention the 14-week cap."
+    "notes": "Requires combining Elterngeld details with Acme's supplement limit. Common failure: chatbot says Acme supplements full Elternzeit or doesn't mention the 14-week cap."
   },
   {
     "id": "leave-003",
@@ -96,7 +96,7 @@
     "context": {"region": "US", "tenure_years": 2, "role": "Individual Contributor"},
     "difficulty": "hard",
     "tags": ["parental-leave", "pto", "cross-policy", "accrual"],
-    "notes": "Cross-policy question requiring synthesis of HR-PTO-001 and HR-LEAVE-002. Tests whether agent can reason across documents."
+    "notes": "Cross-policy question requiring synthesis of HR-PTO-001 and HR-LEAVE-002. Tests whether chatbot can reason across documents."
   },
   {
     "id": "cross-002",
@@ -105,6 +105,6 @@
     "context": {"region": "UK", "tenure_years": 1, "role": "Engineer"},
     "difficulty": "hard",
     "tags": ["it", "hr", "cross-policy", "pip", "discipline"],
-    "notes": "Deliberately ambiguous. Tests whether agent hedges appropriately rather than hallucinating a policy that doesn't exist. Good agent notes the gap and recommends HR."
+    "notes": "Deliberately ambiguous. Tests whether chatbot hedges appropriately rather than hallucinating a policy that doesn't exist. Good chatbot notes the gap and recommends HR."
   }
 ]
